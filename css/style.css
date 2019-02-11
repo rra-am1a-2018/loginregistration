@@ -1,0 +1,16 @@
+/* body {
+  background-color: azure;
+} */
+
+.footer {
+  min-height: 80px;
+  background-color: #E9ECEF;
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  color:#272B2F;
+}
+
+.content {
+  min-height: 40vh;
+}
