@@ -1,10 +1,10 @@
 <h1>Registratiepagina</h1>
 <div class="row">
   <div class="col-6">
-    <form>
+    <form action="./index.php?content=register-script" method="post">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for="exampleInputEmail1">E-mailadres</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type e-mailadres" name="email">
         <small id="emailHelp" class="form-text text-muted">Uw e-mail wordt niet gedeeld met anderen.</small>
       </div>
       <button type="submit" class="btn btn-primary btn-block btn-lg">Sla op</button>
