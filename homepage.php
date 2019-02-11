@@ -1,1 +1,1 @@
-<p>Dit is de homepage</p>
+<h1>Dit is de homepage</h1>
