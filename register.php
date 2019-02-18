@@ -4,7 +4,7 @@
     <form action="./index.php?content=register-script" method="post">
       <div class="form-group">
         <label for="exampleInputEmail1">E-mailadres</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type e-mailadres" name="email">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type e-mailadres" name="email" required>
         <small id="emailHelp" class="form-text text-muted">Uw e-mail wordt niet gedeeld met anderen.</small>
       </div>
       <button type="submit" class="btn btn-primary btn-block btn-lg">Sla op</button>

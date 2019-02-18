@@ -27,6 +27,16 @@
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
+      // Verstuur de email met activatielink naar de persoon die zich registreert.
+      $to = "wendyvandijk@gmail.com";
+      $subject = "The Voice kan beter, enkele aandachtspunten voor Martijn";
+      $message = "Beste Wendy, Martijn wordt te oud voor het programma, graag vervangen door een jonger iemand, Groetjes Jan publiek.";
+      $headers = "From: adruijter@gmail.com";
+      
+      mail($to, $subject, $message, $headers);
+
+
+
       echo '<div class="alert alert-success" role="alert">Uw emailadres is verwerkt</div>';
       header("Refresh: 4; url=./index.php?content=register");
     } else {
