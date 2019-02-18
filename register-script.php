@@ -1,7 +1,10 @@
 <?php
   include("./connect_db.php");
+  include("./functions.php");
 
-  $email = $_POST["email"];
+  $email = sanitize($_POST["email"]);
+
+  if (!empty($email)) {
 
   // Maak een select-query om te controleren of het e-mailadres al bestaat.
   $sql = "SELECT * FROM `register` WHERE `email` = '$email'";
@@ -27,8 +30,13 @@
       echo '<div class="alert alert-success" role="alert">Uw emailadres is verwerkt</div>';
       header("Refresh: 4; url=./index.php?content=register");
     } else {
-      echo 'Uw gegevens zijn niet verwerkt probeer het nog een keer op een ander moment, dat is alles wat we weten';
+      echo '<div class="alert alert-danger" role="alert">Uw gegevens zijn niet verwerkt probeer het nog een keer op een ander moment, dat is alles wat we weten</div>';
       header("Refresh: 4; url=./index.php?content=register");
     }
   }
+
+} else {
+  echo '<div class="alert alert-danger" role="alert">U heeft geen e-mailadres ingevoerd, vul een e-mailadres in.</div>';
+  header("Refresh: 4; url=./index.php?content=register");
+}
 ?>
