@@ -3,6 +3,14 @@
 
   $email = $_POST["email"];
 
+  // Maak een select-query om te controleren of het e-mailadres al bestaat.
+  $sql = "SELECT * FROM `register` WHERE `email` = '$email'";
+
+  // Stuur de query af op de database
+  $result = mysqli_query($conn, $sql);
+
+  echo mysqli_num_rows($conn, $result); exit();
+
   $sql = "INSERT INTO `register` (`id`,
                                   `email`,
                                   `password`)
