@@ -26,6 +26,9 @@
   
     $result = mysqli_query($conn, $sql);
 
+    // Hiermee vraag je de door autonummering gemaakt id op
+    $id = mysqli_insert_id($conn);
+
     if ($result) {
       // Verstuur de email met activatielink naar de persoon die zich registreert.
       $to = $email;
@@ -38,15 +41,15 @@
                       h1 {
                         background-color: rgb(200, 120, 23);
                         padding: 1em;
+                        width: 50%;
                       }
                     </style>
                     </head>
-                  <body>
-                  
+                  <body>                  
                     <h1>Beste gebruiker,</h1>
                     <p>U heeft zich onlangs geregistreerd voor de site www.loginregistration.am1a.org. Om het actvatieproces te voltooien moet u op de onderstaande activatielink klikken.</p>
                     <p>
-                      <a href='http://www.loginregistration.am1a.org/index.php?content=choosepassword'>
+                      <a href='http://www.loginregistration.am1a.org/index.php?content=choosepassword&id=" . $id . "'>
                       klik hier voor activatie
                       </a>
                     </p>
