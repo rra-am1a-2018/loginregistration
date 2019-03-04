@@ -34,6 +34,12 @@
                   <html>
                     <head>
                     <title>Page Title</title>
+                    <style>
+                      h1 {
+                        background-color: rgb(200, 120, 23);
+                        padding: 1em;
+                      }
+                    </style>
                     </head>
                   <body>
                   
