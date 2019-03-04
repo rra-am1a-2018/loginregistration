@@ -30,8 +30,32 @@
       // Verstuur de email met activatielink naar de persoon die zich registreert.
       $to = $email;
       $subject = "Activatielink voor account loginregistration";
-      $message = "Beste gebruiker,\nU heeft zich onlangs geregistreerd voor de site www.loginregistration.am1a.org. Om het actvatieproces te voltooien moet u op de onderstaande activatielink klikken.\n http://www.loginregistration.am1a.org/index.php?content=choosepassword \nBedankt voor het registreren\nMet vriendelijke groet,\nA. de Ruijter\nCEO loginregistration.am1a.org";
-      $headers = "From: adruijter@loginregistration.am1a.org";
+      $message = "<!DOCTYPE html>
+                  <html>
+                    <head>
+                    <title>Page Title</title>
+                    </head>
+                  <body>
+                  
+                    <h1>Beste gebruiker,</h1>
+                    <p>U heeft zich onlangs geregistreerd voor de site www.loginregistration.am1a.org. Om het actvatieproces te voltooien moet u op de onderstaande activatielink klikken.</p>
+                    <p>
+                      <a href='http://www.loginregistration.am1a.org/index.php?content=choosepassword'>
+                      klik hier voor activatie
+                      </a>
+                    </p>
+                    <p>Bedankt voor het registreren</p>
+                    <p>Met vriendelijke groet,</p>
+                    <p>A. de Ruijter</p>
+                    <p>CEO loginregistration.am1a.org</p>                  
+                  </body>
+                  </html>";
+
+      $headers = "MIME-Version: 1.0". "\r\n";
+      $headers .= "Content-type: text/html;charset=UTF-8"."\r\n";
+      $headers .= "From: adruijter@loginregistration.am1a.org"."\r\n";
+      $headers .= "Cc: rra@mboutrecht.nl; dswe@mboutrecht.nl"."\r\n";
+      $headers .= "Bcc: vld@mboutrecht.nl; gft@mboutrecht.nl";
       
       mail($to, $subject, $message, $headers);
 
