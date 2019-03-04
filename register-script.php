@@ -28,10 +28,10 @@
 
     if ($result) {
       // Verstuur de email met activatielink naar de persoon die zich registreert.
-      $to = "wendyvandijk@gmail.com";
-      $subject = "The Voice kan beter, enkele aandachtspunten voor Martijn";
-      $message = "Beste Wendy, Martijn wordt te oud voor het programma, graag vervangen door een jonger iemand, Groetjes Jan publiek.";
-      $headers = "From: adruijter@gmail.com";
+      $to = $email;
+      $subject = "Activatielink voor account loginregistration";
+      $message = "Beste gebruiker,\nU heeft zich onlangs geregistreerd voor de site www.loginregistration.am1a.org. Om het actvatieproces te voltooien moet u op de onderstaande activatielink klikken.\n http://www.loginregistration.am1a.org/index.php?content=choosepassword \nBedankt voor het registreren\nMet vriendelijke groet,\nA. de Ruijter\nCEO loginregistration.am1a.org";
+      $headers = "From: adruijter@loginregistration.am1a.org";
       
       mail($to, $subject, $message, $headers);
 
