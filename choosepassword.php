@@ -3,11 +3,11 @@
     <form action="./index.php?content=choosepassword-script" method="post" >
       <div class="form-group">
         <label for="InputPassword1">Kies een wachtwoord:</label>
-        <input type="password" class="form-control" id="InputPassword1" placeholder="wachtwoord" name="password">
+        <input type="password" class="form-control" id="InputPassword1" placeholder="wachtwoord" name="password" required>
       </div>
       <div class="form-group">
         <label for="InputPassword2">Voer het wachtwoord opnieuw in:</label>
-        <input type="password" class="form-control" id="InputPassword2" placeholder="wachtwoord check" name="checkpassword">
+        <input type="password" class="form-control" id="InputPassword2" placeholder="wachtwoord check" name="checkpassword" required>
       </div>
       <input type="hidden" value="<?php echo $_GET["id"]; ?>" name="id">
       <button type="submit" class="btn btn-warning btn-lg btn-block">Sla op!</button>
