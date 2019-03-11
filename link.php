@@ -12,6 +12,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=register">registratie</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=login-form">inloggen</a>
       </li>           
     </ul>
   </div>
