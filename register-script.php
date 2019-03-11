@@ -19,10 +19,12 @@
   } else {
     $sql = "INSERT INTO `register` (`id`,
                                   `email`,
-                                  `password`)
+                                  `password`,
+                                  `userrole`)
                           VALUES (NULL,
                                   '$email',
-                                  'geheim')";
+                                  'geheim',
+                                  'customer')";
   
     $result = mysqli_query($conn, $sql);
 
