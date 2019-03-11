@@ -5,11 +5,11 @@
       <div class="form-group">
         <label for="InputEmail">E-mailadres</label>
         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
-          placeholder="Uw e-mailadres...">
+          placeholder="Uw e-mailadres..." name="email">
       </div>
       <div class="form-group">
         <label for="InputPassword">Wachtwoord</label>
-        <input type="password" class="form-control" id="InputPassword" placeholder="Uw wachtwoord">
+        <input type="password" class="form-control" id="InputPassword" placeholder="Uw wachtwoord" name="password">
       </div>
       <button type="submit" class="btn btn-primary btn-lg btn-block">Inloggen</button>
     </form>
