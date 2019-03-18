@@ -22,6 +22,13 @@
 
         $userrole = $record["userrole"];
 
+        session_start();
+
+        $_SESSION["id"] = $record["id"];
+        $_SESSION["userrole"] = $record["userrole"];
+        $_SESSION["email"] = $record["email"];
+        $_SESSION["hoi"] = "Ik zeg Hoi!";
+
         switch ($userrole) {
           case 'customer':
             // Link door naar de customerhomepage
