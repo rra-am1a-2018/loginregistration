@@ -20,6 +20,31 @@
       $blowfish_password =  $record["password"]; 
 
       if ( password_verify($password, $blowfish_password)) {
+
+        $userrole = $record["userrole"];
+
+        switch ($userrole) {
+          case 'customer':
+            // Link door naar de customerhomepage
+            echo '<div class="alert alert-danger" role="alert">U bent succesvol ingelogd als in de gebruikersrol van customer, U wordt doorgestuurd naar de customerhomepage.</div>';
+            header("Refresh: 4; url=./index.php?content=customerhome");
+          break;
+          case 'administrator':
+
+
+          break;
+          case 'root':
+
+
+          break;
+          case 'moderator':
+
+
+          break;
+          default:
+
+          break;
+        }
         
 
       } else {
