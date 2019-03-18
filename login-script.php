@@ -1,6 +1,5 @@
 <?php
-  var_dump($_POST);
-
+  // var_dump($_POST);
   include("./connect_db.php");
   include("./functions.php");
 
@@ -26,7 +25,7 @@
         switch ($userrole) {
           case 'customer':
             // Link door naar de customerhomepage
-            echo '<div class="alert alert-danger" role="alert">U bent succesvol ingelogd als in de gebruikersrol van customer, U wordt doorgestuurd naar de customerhomepage.</div>';
+            echo '<div class="alert alert-success" role="alert">U bent succesvol ingelogd als in de gebruikersrol van customer, U wordt doorgestuurd naar de customerhomepage.</div>';
             header("Refresh: 4; url=./index.php?content=customerhome");
           break;
           case 'administrator':
