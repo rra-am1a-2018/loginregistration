@@ -29,19 +29,21 @@
             header("Refresh: 4; url=./index.php?content=customerhome");
           break;
           case 'administrator':
-
-
+            echo '<div class="alert alert-success" role="alert">U bent succesvol ingelogd als in de gebruikersrol van administrator, U wordt doorgestuurd naar de administratorhomepage.</div>';
+            header("Refresh: 4; url=./index.php?content=administratorhome");
           break;
           case 'root':
-
+            echo '<div class="alert alert-success" role="alert">U bent succesvol ingelogd als in de gebruikersrol van root, U wordt doorgestuurd naar de roothomepage.</div>';
+            header("Refresh: 4; url=./index.php?content=roothome");
 
           break;
           case 'moderator':
-
-
+            echo '<div class="alert alert-success" role="alert">U bent succesvol ingelogd als in de gebruikersrol van moderator, U wordt doorgestuurd naar de moderatorhomepage.</div>';
+            header("Refresh: 4; url=./index.php?content=moderatorhome");
           break;
           default:
-
+            echo '<div class="alert alert-success" role="alert">U bent niet ingelogd in een bepaalde gebruikersrol, U wordt doorgestuurd naar de standaardhomepage.</div>';
+            header("Refresh: 4; url=./index.php?content=homepage");
           break;
         }
         
