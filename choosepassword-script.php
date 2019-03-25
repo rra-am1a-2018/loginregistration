@@ -49,11 +49,11 @@
       }     
     } else {
       echo '<div class="alert alert-danger" role="alert">Uw ingevoerde wachtwoorden zijn niet gelijk, probeer het nogmaals...</div>';
-      header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
+      header("Refresh: 4; url=./index.php?content=choosepassword&id=$id&pw=$pw");
     } 
 
   } else {
     echo '<div class="alert alert-danger" role="alert">Uw een van de wachtwoorden niet ingevoerd, probeer het nogmaals...</div>';
-    header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
+    header("Refresh: 4; url=./index.php?content=choosepassword&id=$id&pw=$pw");
   }  
 ?>
