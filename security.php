@@ -4,7 +4,7 @@
     echo '<div class="alert alert-danger" role="alert">U bent niet ingelogd, U wordt doorgestuurd naar de standaard homepage.</div>';
     header("Refresh: 4; url=./index.php?content=homepage");
     exit();
-  } elseif ( !($userrole == $_SESSION["userrole"] )) {
+  } elseif ( !in_array($_SESSION["userrole"], $userrole )) {
     echo '<div class="alert alert-danger" role="alert">U heeft niet de juiste gebruikerrol voor deze pagina. U wordt uitgelogd en doorgestuurd naar de standaard homepagina.</div>';
     header("Refresh: 4; url=./index.php?content=logout");
     exit();

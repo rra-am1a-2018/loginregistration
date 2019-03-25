@@ -1,5 +1,5 @@
 <?php 
-  $userrole = 'moderator';
+  $userrole = ['moderator', 'root'];
   include("./security.php"); 
 ?>
 <h1>Moderator Homepage</h1>
