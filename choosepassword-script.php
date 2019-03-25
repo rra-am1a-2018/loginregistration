@@ -1,5 +1,5 @@
 <?php
-  var_dump($_POST);
+  // var_dump($_POST);
   include("./connect_db.php");
   include("./functions.php");
 
@@ -21,34 +21,32 @@
 
         if (password_verify($record["password"], $pw)) {
 
-          echo 'Het id en password matched';
-          exit();
+          $blowfish_password = password_hash($password, PASSWORD_BCRYPT);
+  
+          $sql = "UPDATE `register` 
+                  SET `password` = '$blowfish_password'
+                  WHERE `id` = $id";
+  
+          $result = mysqli_query($conn, $sql);
+
+          if ( $result ) {
+            echo '<div class="alert alert-success" role="alert">U password is ingesteld</div>';
+            header("Refresh: 4; url=./index.php?content=homepage");
+          } else {
+            echo '<div class="alert alert-danger" role="alert">Uw wachtwoord is niet ingesteld. Probeer het nogmaals...</div>';
+            header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
+          }
+  
         } else {
           // het id en password matchen niet
+          echo '<div class="alert alert-danger" role="alert">Uw wachtwoord matched niet met het id</div>';
+          header("Refresh: 4; url=./index.php?content=homepage");
         }
       } else {
         // Het id is niet bekend
-      }
-
-      $blowfish_password = password_hash($password, PASSWORD_BCRYPT);
-  
-      $sql = "UPDATE `register` 
-              SET `password` = '$blowfish_password'
-              WHERE `id` = $id";
-      
-      // echo $sql; exit();
-      // $2y$10$sXSrumjJMU0HO/3ckIv1FO0tFU0wb3aoG6qDMRN5opGrpupTwx1nG   =>  geheim
-      // $2y$10$PosHguK8ZLOeLnmuOfGJiO3YdPM46eDmGUyU4i8OpPr6VxjXDXMrm   =>  geheim
-  
-      $result = mysqli_query($conn, $sql);
-  
-      if ( $result ) {
-        echo '<div class="alert alert-success" role="alert">U password is ingesteld</div>';
+        echo '<div class="alert alert-danger" role="alert">Het opgegeven id is niet bekend</div>';
         header("Refresh: 4; url=./index.php?content=homepage");
-      } else {
-        echo '<div class="alert alert-danger" role="alert">Uw wachtwoord is niet ingesteld. Probeer het nogmaals...</div>';
-        header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
-      }
+      }     
     } else {
       echo '<div class="alert alert-danger" role="alert">Uw ingevoerde wachtwoorden zijn niet gelijk, probeer het nogmaals...</div>';
       header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
@@ -57,12 +55,5 @@
   } else {
     echo '<div class="alert alert-danger" role="alert">Uw een van de wachtwoorden niet ingevoerd, probeer het nogmaals...</div>';
     header("Refresh: 4; url=./index.php?content=choosepassword&id=$id");
-  }
-  
-
-  
-  
-
-
-  
+  }  
 ?>
