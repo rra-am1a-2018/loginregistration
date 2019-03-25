@@ -35,16 +35,13 @@
               header("Location: ./index.php?content=logout");
             break;
           }
-
-
-
-          echo '<li class="nav-item active">
-                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=homepage">home<span class="sr-only">(current)</span></a>
-                </li>';
           echo '<li class="nav-item">
                   <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=logout">uitloggen</a>
                 </li>';
         } else { // Deze links worden aangeboden als we niet zijn ingelogd.
+          echo '<li class="nav-item active">
+                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=homepage">home<span class="sr-only">(current)</span></a>
+                </li>';          
           echo '<li class="nav-item">
                   <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=register">registratie</a>
                 </li>';
