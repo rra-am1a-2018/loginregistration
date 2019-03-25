@@ -22,8 +22,6 @@
 
         $userrole = $record["userrole"];
 
-        session_start();
-
         $_SESSION["id"] = $record["id"];
         $_SESSION["userrole"] = $record["userrole"];
         $_SESSION["email"] = $record["email"];

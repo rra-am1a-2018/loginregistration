@@ -7,18 +7,24 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=homepage">home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=register">registratie</a>
-      </li>  
-      <li class="nav-item">
-        <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=login-form">inloggen</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=logout">uitloggen</a>
-      </li>           
+      <?php
+        // Deze links worden aangeboden als we zijn ingelogd.
+        if (isset($_SESSION["id"])) {
+          echo '<li class="nav-item active">
+                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=homepage">home<span class="sr-only">(current)</span></a>
+                </li>';
+          echo '<li class="nav-item">
+                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=logout">uitloggen</a>
+                </li>';
+        } else { // Deze links worden aangeboden als we niet zijn ingelogd.
+          echo '<li class="nav-item">
+                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=register">registratie</a>
+                </li>';
+          echo '<li class="nav-item">
+                  <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=login-form">inloggen</a>
+                </li>';
+        }
+      ?>               
     </ul>
   </div>
 </nav>
