@@ -6,9 +6,30 @@
   $password =  sanitize($_POST["password"]);
   $checkpassword = sanitize($_POST["checkpassword"]);
   $id =  sanitize($_POST["id"]);
+  $pw = sanitize($_POST["pw"]);
 
   if ( !empty($password) && !empty($checkpassword)) {
     if ( !strcmp($password, $checkpassword)) {
+
+      // Check met een select of het id bestaat in de database en of het gehashte password matched met het id
+      $sql = "SELECT * FROM `register` WHERE `id` = $id";
+
+      $result = mysqli_query($conn, $sql);
+
+      if ( mysqli_num_rows($result) == 1 ) {
+        $record = mysqli_fetch_assoc($result);
+
+        if (password_verify($record["password"], $pw)) {
+
+          echo 'Het id en password matched';
+          exit();
+        } else {
+          // het id en password matchen niet
+        }
+      } else {
+        // Het id is niet bekend
+      }
+
       $blowfish_password = password_hash($password, PASSWORD_BCRYPT);
   
       $sql = "UPDATE `register` 

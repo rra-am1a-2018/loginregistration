@@ -17,13 +17,16 @@
     echo '<div class="alert alert-info" role="alert">Het door u ingevoerde e-mailadres is al in gebruik, kies een ander e-mailadres</div>';
     header("Refresh: 4; url=./index.php?content=register");
   } else {
+    $password = 'geheim';
+    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
     $sql = "INSERT INTO `register` (`id`,
                                   `email`,
                                   `password`,
                                   `userrole`)
                           VALUES (NULL,
                                   '$email',
-                                  'geheim',
+                                  '$password',
                                   'customer')";
   
     $result = mysqli_query($conn, $sql);
@@ -51,7 +54,7 @@
                     <h1>Beste gebruiker,</h1>
                     <p>U heeft zich onlangs geregistreerd voor de site www.loginregistration.am1a.org. Om het actvatieproces te voltooien moet u op de onderstaande activatielink klikken.</p>
                     <p>
-                      <a href='http://www.loginregistration.am1a.org/index.php?content=choosepassword&id=" . $id . "'>
+                      <a href='http://www.loginregistration.am1a.org/index.php?content=choosepassword&id=" . $id . "&pw=" . $password_hash . "'>
                       klik hier voor activatie
                       </a>
                     </p>

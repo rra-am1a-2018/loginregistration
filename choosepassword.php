@@ -10,6 +10,7 @@
         <input type="password" class="form-control" id="InputPassword2" placeholder="wachtwoord check" name="checkpassword" required>
       </div>
       <input type="hidden" value="<?php echo $_GET["id"]; ?>" name="id">
+      <input type="hidden" value="<?php echo $_GET["pw"]; ?>" name="pw">
       <button type="submit" class="btn btn-warning btn-lg btn-block">Sla op!</button>
     </form>
   </div>
