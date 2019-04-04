@@ -30,6 +30,9 @@
               echo '<li class="nav-item">
                       <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=customerhome">customerhome</a>
                     </li>';
+              echo '<li class="nav-item">
+                      <a class="nav-link" href="http://www.loginregistration.am1a.org/index.php?content=game">game</a>
+                    </li>';
             break;
             default:
               header("Location: ./index.php?content=logout");

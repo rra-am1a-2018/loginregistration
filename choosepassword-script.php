@@ -5,7 +5,7 @@
 
   $password =  sanitize($_POST["password"]);
   $checkpassword = sanitize($_POST["checkpassword"]);
-  $id =  sanitize($_POST["id"]);
+  $id = sanitize($_POST["id"]);
   $pw = sanitize($_POST["pw"]);
 
   if ( !empty($password) && !empty($checkpassword)) {
